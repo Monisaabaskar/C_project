@@ -1,22 +1,29 @@
 #include <stdio.h>
+#include <stdlib.h>
 
 float area(int radius, int height);
 
-int main(void)
+int main(int argc , char *argv[])
 {
-    int radius = 2;
-    int height = 8;
-    printf("%.1f\n", area(radius, height));
+    if(argc == 3)
+    {   // converting each string argument in main  into long integer argument. So that we can get output into integer//
+        long radius = strtol(argv[1], NULL, 10);
+        long height = strtol(argv[2], NULL, 10);
+
+        printf("%.2f\n" , area(radius, height));
+    }
+    else
+    {
+        printf("Usage: area radius height\n");
+    }
 
     return 0;
-
 }
-
 
 
 float area(int radius, int height)
 {
-    float pi = 22.7;
+    float pi = 3.14f;
     float area = 1;
 
     area = (2 * pi * radius*(radius + height));
