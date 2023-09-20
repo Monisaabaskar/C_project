@@ -16,7 +16,7 @@ if(argc == 2)
 }
 else
 {
-    printf(" no command line\n ");
+    printf("no command line\n");
 }
     return 0;
 }
