@@ -1,14 +1,16 @@
 #include<stdio.h>
+#include <stdlib.h>
 
 void print(int n);
 
-int main(void)
+int main(int argc , char *argv[])
 {
 
-int n = 15;
-
-print(n);
-
+    if (argc == 2)
+    {
+        long n  = strtol(argv[1], NULL, 10);
+         print(n);
+    }
     return 0;
 }
 
