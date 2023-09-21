@@ -1,15 +1,24 @@
 #include <stdio.h>
+#include <stdlib.h>
 
 int min_3 (int a, int b, int c);
 
-int main (void)
+int main (int argc , char *argv[])
 {
-    int x = 10;
-    int y = 8;
-    int z = 3;
+    if(argc == 4)
+    {
+        long a = strtol(argv[1], NULL, 10);
+        long b = strtol(argv[1], NULL, 10);
+        long c = strtol(argv[1], NULL, 10);
+    
 
-    printf("minimum number:%d\n", min_3(x,y,z));
+        printf("minimum number:%d\n", min_3(a,b,c));
+    }
 
+    else
+    {
+        printf("no command line\n");
+    }
     return 0;
 }
 
