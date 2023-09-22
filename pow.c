@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 
 
 int power(int x, int n) 
@@ -16,15 +17,16 @@ int power(int x, int n)
 
 
 
-int main(void) {
+int main(int argc, char *argv[])
+{
+    if(argc == 3)
+    {
 
-int a = 9;
-int k = 2;
-
-
-
-printf("%d \n", power(a, k));
-return 0;
+        int x = strtol(argv[1], NULL, 10);
+        int n = strtol(argv[2], NULL, 10);
+        printf("power : %d\n", power(x,n));
+    }
+    return 0;
 
 
 }
