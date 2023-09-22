@@ -1,16 +1,34 @@
 #include <stdio.h>
+#include <stdlib.h>
 
 int min(int array[] , int len);
 
-int main(void)
+int main(int argc , char *argv[])
 {
-    int num[] = {3,9,1,0,2,5,8};
-    int len = 7;
+    if (argc > 2)
+    {
+        int len = strtol(argv[1], NULL, 10);
 
-    printf("minimum : %d\n", min(num, len));
+        int *array = (int*)malloc(len * sizeof(int));
 
+        if(array == NULL)
+        {
+            return -1;
+        }
+        
+        else
+        {
+            for(int i = 0, j = 2; i < len; i++, j++)
+            {
+                array[i]= strtol(argv[j], NULL, 10);
+            }
+        }
 
- return 0;   
+        printf("minimum : %d\n" ,min(array, len));
+
+    }
+    
+    return 0;
 }
 
 
